@@ -43,10 +43,14 @@ check is the one that catches that.
 ## Run it
 
 ```bash
+git clone --recurse-submodules https://github.com/vijaygopalbalasa/steth-integration-checks
+cd steth-integration-checks
 forge build
 ETH_RPC=<mainnet RPC that serves block 26277000> forge test -vv   # https://eth.drpc.org worked on Oct 26 2026
 forge test                                                          # without ETH_RPC every check is reported as skipped
 ```
+
+If you cloned without `--recurse-submodules`, run `git submodule update --init` before `forge build`.
 
 ## Add an integration
 
